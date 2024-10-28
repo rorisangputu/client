@@ -1,3 +1,5 @@
+"use client";
+
 const MainNav = () => {
   return <div>MainNav</div>;
 };

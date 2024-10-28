@@ -7,13 +7,30 @@ import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import MainNav from "@/components/MainNav";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   userId?: string | null;
 }
 const Header = ({ userId }: HeaderProps) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={cn("w-full z-50 transition")}>
+    <header
+      className={cn(
+        "w-full z-50 transition",
+        scrolled ? "fixed top-0 left-0 bg-white shadow-lg" : "bg-transparent"
+      )}
+    >
       <Container>
         <div className="relative px4 sm:px-6 lg:px-12 flex h-16 items-center">
           <Link
