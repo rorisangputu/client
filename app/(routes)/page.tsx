@@ -1,17 +1,14 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import React from "react";
+import Container from "@/components/container";
 
 const HomePage = () => {
   return (
-    <div>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton afterSwitchSessionUrl="/" />
-      </SignedIn>
-      HomePage
-    </div>
+    <>
+      <Container className="px-4 md:px-12">
+        <section>
+          
+        </section>
+      </Container>
+    </>
   );
 };
 
