@@ -9,7 +9,8 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-  		colors: {
+		  colors: {
+			hero: '#B4B74E',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

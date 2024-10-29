@@ -41,7 +41,7 @@ const Header = ({ userId }: HeaderProps) => {
           </Link>
 
           {/*MAIN NAV*/}
-          <MainNav />
+          <MainNav scrolled={scrolled} />
 
           {userId ? (
             <div className="ml-4 flex items-center space-x-4">
