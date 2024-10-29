@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Heart, HeartCrack, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import useCart from "@/hooks/use-carts";
 
 interface PopularContentProps {
   data: Product;
@@ -14,6 +15,12 @@ interface PopularContentProps {
 
 const PopularContent = ({ data }: PopularContentProps) => {
   const [isLiked, setIsLiked] = useState(false);
+
+  const cart = useCart();
+  const addToCart = (data: Product) => {
+    cart.addItem({ ...data, qty: 1 });
+  };
+
   const IsLikedIcon = isLiked ? Heart : HeartCrack;
   return (
     <Card
@@ -76,7 +83,7 @@ const PopularContent = ({ data }: PopularContentProps) => {
 
       {/* Add to cart button */}
       <Button
-        onClick={() => {}}
+        onClick={() => addToCart(data)}
         className="absolute top-0 right-0 rounded-tl-none rounded-tr-lg rounded-bl-lg
              rounded-br-none p-2 px-3"
       >
