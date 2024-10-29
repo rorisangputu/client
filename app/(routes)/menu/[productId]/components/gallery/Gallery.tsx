@@ -1,5 +1,9 @@
 "use client";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import GalleryContentImage from "./GalleryContentImage";
+import GalleryTab from "./GalleryTab";
+
 interface GalleryProps {
   images: {
     url: string;
@@ -7,7 +11,22 @@ interface GalleryProps {
 }
 
 const Gallery = ({ images }: GalleryProps) => {
-  return <div>Gallery</div>;
+  return (
+    <Tabs defaultValue={images[0].url} className="w-full">
+      {images.map((tab) => (
+        <TabsContent key={tab.url} value={tab.url.toString()}>
+          <GalleryContentImage url={tab.url} />
+        </TabsContent>
+      ))}
+      <TabsList className="bg-transparent w-full">
+        {images.map((tab) => (
+            <TabsTrigger key={tab.url} value={tab.url.toString()}>
+                <GalleryTab url={tab.url}/>
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    </Tabs>
+  );
 };
 
 export default Gallery;

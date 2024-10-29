@@ -5,6 +5,8 @@ import Container from "@/components/container";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import Gallery from "./components/gallery/Gallery";
+import Info from "./components/Info";
+import SuggestedList from "./components/suggested-list";
 
 interface ProdPageProps {
   params: {
@@ -40,7 +42,11 @@ const productPage = async ({ params }: ProdPageProps) => {
           <Gallery images={product.images} />
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             {/* Info section */}
+            <Info product={product} />
           </div>
+        </div>
+        <div>
+          <SuggestedList products={suggestedProducts} />
         </div>
       </div>
     </Container>
