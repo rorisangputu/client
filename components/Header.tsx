@@ -32,7 +32,7 @@ const Header = ({ userId }: HeaderProps) => {
       )}
     >
       <Container>
-        <div className="relative px4 sm:px-6 lg:px-12 flex h-16 items-center">
+        <div className="relative px-4 xl:px-0 flex h-16 items-center">
           <Link
             href={"/"}
             className="uppercase flex gap-x-2 font-bold text-neutral-700 text-lg md:text-xl"
