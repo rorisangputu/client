@@ -38,12 +38,12 @@ const Header = ({ userId }: HeaderProps) => {
             href={"/"}
             className="uppercase flex gap-x-2 font-bold text-neutral-700 text-lg md:text-xl"
           >
-            Foodied
+            Blue World
           </Link>
 
           {/*MAIN NAV*/}
           <MainNav scrolled={scrolled} />
-
+          {userId && <CartActionButton />}
           {userId ? (
             <div className="ml-4 flex items-center space-x-4">
               <UserButton afterSwitchSessionUrl="/" />
@@ -60,7 +60,6 @@ const Header = ({ userId }: HeaderProps) => {
               </Link>
             </div>
           )}
-          {userId && <CartActionButton />}
         </div>
       </Container>
     </header>

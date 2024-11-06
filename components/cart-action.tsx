@@ -22,7 +22,7 @@ const CartActionButton = () => {
   return (
     <div className="ml-4 flex items-center justify-center gap-x-4">
       <Button
-        className="rounded-lg flex"
+        className="rounded-lg flex w-12"
         size={"icon"}
         onClick={() => router.push("/cart")}
       >

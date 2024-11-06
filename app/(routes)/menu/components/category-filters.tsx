@@ -32,7 +32,7 @@ const CategoryFilters = ({ categories }: CategoryFiltersProps) => {
   };
 
   return (
-    <Box className="flex-col gap2 border-b pb-4 cursor-pointer">
+    <Box className="flex-col gap2  pb-4 cursor-pointer">
       <h2 className="text-xl font-semibold text-neutral-700">Category</h2>
       <Box className="flex-col gap-2 mt-2">
         {categories.map((category) => (
@@ -41,12 +41,12 @@ const CategoryFilters = ({ categories }: CategoryFiltersProps) => {
             key={category.id}
             className={cn(
               "text-sm font-semibold text-neutral-500 flex items-center gap-2",
-              category.name === searchParams.get("category") && "text-hero"
+              category.name === searchParams.get("category") && "text-blue-500"
             )}
           >
             {category.name}
             {category.name === searchParams.get("category") && (
-              <Check className="w-4 h-4 text-hero" />
+              <Check className="w-4 h-4 text-blue-600" />
             )}
           </div>
         ))}

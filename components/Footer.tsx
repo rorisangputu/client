@@ -6,39 +6,42 @@ const Footer = () => {
   return (
     <footer className="bg-white ">
       <Container>
-        <div className="w-full  bg-hero/30 grid grid-cols-2 md:grid-cols-4 px-4 md:px-12 py-8">
+        <div className="w-full  bg-blue-700/30 grid grid-cols-2 md:grid-cols-4 px-4 md:px-12 py-8">
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Menu</h2>
-            <p className="text-neutral-500 text-sm">Home</p>
-            <p className="text-neutral-500 text-sm">Why Choose</p>
-            <p className="text-neutral-500 text-sm">Special Menu</p>
-            <p className="text-neutral-500 text-sm">Regular Food</p>
-            <p className="text-neutral-500 text-sm">Special Chefs</p>
+            <p className="text-black text-sm">Home</p>
+            <p className="text-black text-sm">Why Choose</p>
+            <p className="text-black text-sm">Vapes</p>
+            <p className="text-black text-sm">Blog</p>
+            <p className="text-black text-sm">Influencer Program</p>
           </div>
 
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Help</h2>
-            <p className="text-neutral-500 text-sm">Privacy</p>
-            <p className="text-neutral-500 text-sm">Terms & Condition</p>
-            <p className="text-neutral-500 text-sm">Policy</p>
+            <p className="text-black text-sm">Privacy</p>
+            <p className="text-black text-sm">Terms & Condition</p>
+            <p className="text-black text-sm">Policy</p>
           </div>
 
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Contact</h2>
-            <p className="text-neutral-500 text-sm">+000 0000 0000</p>
-            <p className="text-neutral-500 text-sm">info@foodied.com</p>
-            <p className="text-neutral-500 text-sm">1234 New Street, India</p>
+            <p className="text-black text-sm">+000 0000 0000</p>
+            <p className="text-black text-sm">info@blueworld.com</p>
+            <p className="text-black text-sm">
+              243 Sandton Dr, Sandton
+              <span className="block">Johannesburg, GP</span>
+            </p>
           </div>
 
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Subscribe Our Newsletter</h2>
-            <div className="w-full rounded-md border-2 border-emerald-500 flex items-center justify-center">
+            <div className="w-full rounded-md border-2 border-blue-500 flex items-center justify-center">
               <input
                 type="text"
                 placeholder="Enter your Email"
-                className="h-full bg-transparent pl-4 text-sm text-neutral-500 w-full outline-none border-none"
+                className="h-full bg-transparent pl-4 text-sm text-white w-full outline-none border-none"
               />
-              <Button className="bg-emerald-500 rounded-tr-none rounded-br-none hover:bg-emerald-600">
+              <Button className="bg-blue-500 rounded-tr-none rounded-br-none hover:bg-blue-600">
                 Subscribe
               </Button>
             </div>
@@ -46,7 +49,7 @@ const Footer = () => {
         </div>
         <div className="mx-auto py-8 ">
           <p className="text-center text-xs text-black">
-            &copy; 2023 Foodied, Inc. All rights reserved
+            &copy; 2024 Blue World, Inc. All rights reserved
           </p>
         </div>
       </Container>

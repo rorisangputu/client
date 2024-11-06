@@ -20,8 +20,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Foodied",
-  description: "Have food and share love",
+  title: "Blue World Vapes",
+  description: "Smoke and Live",
 };
 
 async function RootLayout({
@@ -37,11 +37,11 @@ async function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ToastProvider />
-          <img
+          {/* <img
             src="/img/hero.svg"
             className="absolute -z-10 top-0 right-0 w-full md:w-[60%]"
             alt=""
-          />
+          /> */}
           <Header userId={userId} />
 
           {children}

@@ -15,89 +15,93 @@ interface PopularContentProps {
 
 const PopularContent = ({ data }: PopularContentProps) => {
   const [isLiked, setIsLiked] = useState(false);
-
   const cart = useCart();
+
   const addToCart = (data: Product) => {
     cart.addItem({ ...data, qty: 1 });
   };
 
-  const IsLikedIcon = isLiked ? Heart : HeartCrack;
   return (
-    <Card
-      className="w-full max-h-[340px] rounded-md bg-white shadow-lg border-none flex flex-col 
-      items-center justify-center relative py-6 pt-25 md:pt-28"
-    >
-      <div className="absolute -top-[4%] md:-top-[20%] overflow-hidden w-24 md:w-40 h-24 md:h-40 rounded-full bg-hero flex items-center justify-center p-1 md:p-2">
-        <div className="w-full h-full rounded-full bg-white relative">
+    <Card className="w-full max-h-[380px] rounded-lg shadow-md flex flex-col items-center bg-white p-4 relative">
+      {/* Image Section */}
+      <div className="w-full h-40 md:h-48 flex items-center justify-center mb-4">
+        <div className="relative w-full h-full bg-gray-100 rounded-lg overflow-hidden">
           <Image
-            className="w-full h-full object-contain"
-            fill
-            alt={data.name}
             src={data.images[0].url}
+            alt={data.name}
+            layout="fill"
+            objectFit="contain"
+            className="p-2"
           />
         </div>
       </div>
-      <Link href={`/menu/${data.id}`} className="w-full px-2 text-center">
-        <CardTitle className="text-neutral-700 truncate w-full">
+
+      {/* Product Details */}
+      <Link href={`/menu/${data.id}`} className="text-center w-full">
+        <CardTitle className="text-lg font-semibold text-neutral-800 mb-1 truncate">
           {data.name}
         </CardTitle>
       </Link>
-      <div className="w-full flex items-center justify-center gap-2 flex-wrap px-2 mt-4">
+
+      <div className="flex flex-wrap gap-2 items-start justify-start text-xs text-gray-600 mt-2">
         {data.cuisine && (
-          <div className="rounded-md bg-emerald-500/10 px-2 py-[2px] text-[10px] font-semibold capitalize">
+          <span className="bg-emerald-100 px-2 py-1 rounded-lg">
             {data.cuisine}
-          </div>
+          </span>
         )}
         {data.category && (
-          <div className="rounded-md bg-blue-500/10 px-2 py-[2px] text-[10px] font-semibold capitalize">
+          <span className="bg-blue-100 px-2 py-1 rounded-lg">
             {data.category}
-          </div>
+          </span>
         )}
         {data.kitchen && (
-          <div className="rounded-md bg-red-500/10 px-2 py-[2px] text-[10px] font-semibold capitalize">
+          <span className="bg-red-100 px-2 py-1 rounded-lg">
             {data.kitchen}
-          </div>
+          </span>
         )}
         {data.size && (
-          <div className="rounded-md bg-yellow-500/10 px-2 py-[2px] text-[10px] font-semibold capitalize">
+          <span className="bg-yellow-100 px-2 py-1 rounded-lg">
             {data.size}
-          </div>
+          </span>
         )}
       </div>
-      <CardDescription className="text-center px-2 my-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nostrum aut
-        qui assumenda dolores eligendi quae tempore ut
-      </CardDescription>
 
-      <div className="w-full flex items-center px-2 mt-4 gap-3">
+      <CardDescription className=" text-gray-500 text-sm mt-3 px-1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos nostrum
+        qui assumenda dolores eligendi.
+      </CardDescription>
+      <div className="flex gap-2 py-2">
+        {/* Add to Cart and Wishlist Buttons */}
         <Button
-          variant={"outline"}
-          className="rounded-full font-light text-lg text-muted-foreground"
+          onClick={() => addToCart(data)}
+          className="p-1 rounded-full bg-white shadow-sm"
         >
-          R{data.price}
+          <ShoppingCart className="h-5 w-5 text-gray-700" />
         </Button>
-        <Link href={`/menu/${data.id}`} className="w-full ">
-          <Button className="bg-hero w-full rounded-full">Buy Now</Button>
-        </Link>
+        <Button
+          onClick={() => setIsLiked(!isLiked)}
+          className="p-1 rounded-full bg-white shadow-sm"
+          variant="ghost"
+        >
+          {isLiked ? (
+            <Heart className="w-5 h-5 text-red-500" />
+          ) : (
+            <HeartCrack className="w-5 h-5 text-gray-700" />
+          )}
+        </Button>
       </div>
 
-      {/* Add to cart button */}
-      <Button
-        onClick={() => addToCart(data)}
-        className="absolute top-0 right-0 rounded-tl-none rounded-tr-lg rounded-bl-lg
-             rounded-br-none p-2 px-3"
-      >
-        <ShoppingCart className="h-4 w-4" />
-      </Button>
-      {/* Add to wishlist */}
-      <Button
-        className="absolute left-0 top-0 hover:bg-transparent"
-        variant={"ghost"}
-      >
-        <IsLikedIcon
-          className={`w-5 h-5 ${isLiked ? "text-red-500" : "text-black"}`}
-        />
-      </Button>
+      {/* Action Buttons */}
+      <div className="w-full flex items-center justify-between px-4">
+        <Button variant="outline" className="text-lg font-medium text-gray-700">
+          R{data.price}
+        </Button>
+        <Link href={`/menu/${data.id}`} className="w-1/2">
+          <Button className="bg-blue-600 text-white w-full rounded-lg">
+            Buy Now
+          </Button>
+        </Link>
+      </div>
     </Card>
   );
 };

@@ -20,14 +20,14 @@ const MainNav = ({ className, scrolled, ...props }: MainNavProps) => {
     },
     {
       href: "/menu",
-      label: "Menu",
+      label: "Store",
       active: pathname === "/menu",
     },
-    {
-      href: "/orders",
-      label: "Orders",
-      active: pathname === "/orders",
-    },
+    // {
+    //   href: "/orders",
+    //   label: "Orders",
+    //   active: pathname === "/orders",
+    // },
     {
       href: "/about",
       label: "About",
@@ -48,14 +48,14 @@ const MainNav = ({ className, scrolled, ...props }: MainNavProps) => {
             href={route.href}
             key={i}
             className={cn(
-              "text-base font-medium transition-colors hover:text-primary",
+              "text-base text-black font-medium transition-colors hover:text-primary",
               route.active
                 ? `${
                     scrolled
-                      ? "text-hero font-bold"
+                      ? "text-black font-bold"
                       : "text-black dark:text-white"
                   } `
-                : `${scrolled ? "text-black" : "text-white"}`
+                : `${scrolled ? "text-black" : "text-black"}`
             )}
           >
             {route.label}

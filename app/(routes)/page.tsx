@@ -1,11 +1,12 @@
 import getProducts from "@/actions/get-products";
 import Container from "@/components/container";
 import PopularContent from "@/components/popularContent";
-import { Button } from "@/components/ui/button";
+
 import Image from "next/image";
-import Link from "next/link";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { FileHeart, Salad, Truck } from "lucide-react";
+import { Cigarette, FileHeart, Salad, ShieldCheck, Truck } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const revalidate = 0;
 
@@ -18,25 +19,25 @@ const HomePage = async () => {
         <section className="grid grid-cols-1 md:grid-cols-2 py-12 pt-16">
           <div className="flex flex-col items-start justify-start gap-4">
             <p className="px-6 py-1 rounded-full text-neutral-500 border border-gray-300">
-              Hungry?
+              Need to blow smoke?
             </p>
-            <h2 className="text-5xl font-bold tracking-wider uppercase text-neutral-700 my-4">
-              Just Come To <span className="block py-4">Foodied & Order</span>
+            <h2 className="text-5xl font-bold tracking-wider uppercase text-neutral-700 my-2">
+              Blue World <span className="block py-4">vapes</span>
             </h2>
-            <p className="text-base text-center md:text-left text-neutral-500 my-4">
+            <p className="text-base text-center md:text-left text-neutral-500 my-2">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Voluptates voluptatum error magni nesciunt accusantium quia
               sapiente
             </p>
             <div className="my-4 flex text-center justify-center md:justify-start gap-6 w-full md:w-auto">
               <Link href={"/menu"}>
-                <Button className="px-8 md:px-16 py-4 md;py-6 rounded-full bg-hero">
+                <Button className="px-8 md:px-16 py-4 md:py-6 rounded-full bg-blue-500">
                   Order Now
                 </Button>
               </Link>
               <Link href={"/"}>
                 <Button
-                  className="px-8 md:px-16 py-4 md;py-6 rounded-full"
+                  className="px-8 md:px-16 py-4 md:py-6 rounded-full"
                   variant={"outline"}
                 >
                   Explore
@@ -45,9 +46,9 @@ const HomePage = async () => {
             </div>
           </div>
           <div>
-            <div className="w-full relative h-[500px] flex items-center justify-center">
+            <div className="w-full relative h-[500px] flex items-center justify-start">
               <Image
-                src="/img/Food.png"
+                src="/img/Geek-Bar-Pulse.png"
                 alt="Hero"
                 className="object-contain w-full h-full absolute"
                 fill
@@ -74,38 +75,42 @@ const HomePage = async () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full my-6 mt-20">
             <Card className="shadow-lg rounded-md border-none p-4 py-12 flex flex-col items-center justify-center gap-4">
-              <Salad className="w-8 h-8 text-hero" />
+              <Cigarette className="w-8 h-8 text-blue-600" />
               <CardTitle className="text-neutral-600">
-                Serve Healthy Food
+                Premium Vape Flavors
               </CardTitle>
               <CardDescription className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                laudantium sunt
+                Explore a wide variety of premium vape flavors designed to suit
+                every taste preference.
               </CardDescription>
             </Card>
 
             <Card className="shadow-lg rounded-md border-none p-4 py-12 flex flex-col items-center justify-center gap-4">
-              <FileHeart className="w-8 h-8 text-hero" />
-              <CardTitle className="text-neutral-600">Best Quality</CardTitle>
+              <ShieldCheck className="w-8 h-8 text-blue-600" />
+              <CardTitle className="text-neutral-600">
+                Top-Quality Products
+              </CardTitle>
               <CardDescription className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                laudantium sunt
+                We offer only the best, highest-quality vape products sourced
+                from trusted brands.
               </CardDescription>
             </Card>
 
             <Card className="shadow-lg rounded-md border-none p-4 py-12 flex flex-col items-center justify-center gap-4">
-              <Truck className="w-8 h-8 text-hero" />
-              <CardTitle className="text-neutral-600">Fast Delivery</CardTitle>
+              <Truck className="w-8 h-8 text-blue-600" />
+              <CardTitle className="text-neutral-600">
+                Reliable & Fast Delivery
+              </CardTitle>
               <CardDescription className="text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                laudantium sunt
+                Enjoy fast and reliable delivery right to your door, ensuring
+                you never run out.
               </CardDescription>
             </Card>
           </div>
         </section>
 
         {/* our chef sections */}
-        <section className=" my-4 py-12 flex flex-col items-center justify-center">
+        {/* <section className=" my-4 py-12 flex flex-col items-center justify-center">
           <h2 className="text-5xl md:text-5xl font-bold tracking-wider uppercase text-neutral-700 my-4">
             Our Special Chefs
           </h2>
@@ -141,7 +146,7 @@ const HomePage = async () => {
               />
             </Card>
           </div>
-        </section>
+        </section> */}
       </Container>
     </>
   );

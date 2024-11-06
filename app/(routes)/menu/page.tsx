@@ -43,9 +43,9 @@ const MenuPage = async ({ searchParams }: MenuProps) => {
         <div className="hidden md:block col-span-2 border-r border-gray-100 top-24">
           <FilterContainer>
             <CategoryFilters categories={categories} />
-            <SizeFilters sizes={sizes} />
+            {/* <SizeFilters sizes={sizes} />
             <KitchenFilters kitchens={kitchens} />
-            <CuisineFilters cuisines={cuisines} />
+            <CuisineFilters cuisines={cuisines} /> */}
           </FilterContainer>
         </div>
         <Box className="col-span-12 md:col-span-10  flex-col items-start justify-start w-full">

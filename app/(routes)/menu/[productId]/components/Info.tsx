@@ -4,9 +4,10 @@ import useCart from "@/hooks/use-carts";
 import { cn } from "@/lib/utils";
 import { Product } from "@/types-db";
 import {
+  Cigarette,
   CookingPot,
   ShoppingCart,
-  Soup,
+
   SquareActivity,
   Utensils,
 } from "lucide-react";
@@ -50,7 +51,7 @@ const Info = ({ product }: InfoProps) => {
         )}
         {product.category && (
           <div className="rounded-md bg-blue-500/10 flex items-center gap-2 px-2 py-[2px] text-[12px] md:text-[16px] font-semibold capitalize">
-            <Soup className="w-4 h-4" />
+            <Cigarette className="w-4 h-4" />
             {product.category}
           </div>
         )}
@@ -80,9 +81,9 @@ const Info = ({ product }: InfoProps) => {
                 onClick={() => handleQty(num)}
                 key={num}
                 className={cn(
-                  "w-8 h-8 cursor-pointer rounded-full flex items-center justify-center border border-hero",
+                  "w-8 h-8 cursor-pointer rounded-full flex items-center justify-center border border-blue-600",
                   qty === num
-                    ? "bg-hero text-white shadow-md"
+                    ? "bg-blue-700 text-white shadow-md"
                     : "bg-transparent shadow-none"
                 )}
               >
