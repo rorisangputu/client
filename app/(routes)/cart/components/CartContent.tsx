@@ -9,11 +9,13 @@ import toast from "react-hot-toast";
 import CartItem from "./CartItem";
 import Box from "@/components/Box";
 import { Separator } from "@/components/ui/separator";
+import axios from "axios";
 
 interface CartContentProps {
   userId: string | null;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CartContent = ({ userId }: CartContentProps) => {
   const cart = useCart();
   const searchParams = useSearchParams();
@@ -27,10 +29,22 @@ const CartContent = ({ userId }: CartContentProps) => {
       toast.success("Payment completed");
     }
 
-    if (searchParams.get("canceled")) {
+    if (searchParams.get("cancelled")) {
       toast.error("Ooops something went wront try again later!");
     }
   }, [searchParams, cart.removeAll]);
+
+  const onCheckOut = async () => {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      {
+        products: cart.items,
+        userId,
+      }
+    );
+
+    window.location = response.data.url;
+  };
 
   return (
     <>
@@ -74,7 +88,7 @@ const CartContent = ({ userId }: CartContentProps) => {
                 Payment
               </h2>
               <Separator />
-              <Button className="w-full" onClick={() => {}}>
+              <Button className="w-full" onClick={onCheckOut}>
                 Checkout
               </Button>
             </Box>

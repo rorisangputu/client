@@ -6,7 +6,7 @@ import {toast} from 'react-hot-toast';
 
 interface CartStore{
     items: Product[],
-
+    userId: string,
     addItem: (data: Product) => void;
     removeItem: (id: string) => void;
     removeAll: () => void;
@@ -17,6 +17,7 @@ const useCart = create(
     persist<CartStore>(
         (set, get) => ({
             items: [],
+            userId: "",
             addItem:(data: Product) => {
                 const currentItems = get().items;
                 const existingItems = currentItems.find((item) => item.id === data.id);

@@ -4,7 +4,7 @@ import PopularContent from "@/components/popularContent";
 
 import Image from "next/image";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { Cigarette, FileHeart, Salad, ShieldCheck, Truck } from "lucide-react";
+import { Cigarette, ShieldCheck, Truck } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 

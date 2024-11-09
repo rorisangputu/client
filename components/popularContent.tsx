@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, HeartCrack, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import useCart from "@/hooks/use-carts";
+//import GetUserId from "@/hooks/getUserIdClient";
 
 interface PopularContentProps {
   data: Product;
@@ -16,6 +17,7 @@ interface PopularContentProps {
 const PopularContent = ({ data }: PopularContentProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const cart = useCart();
+  // const userId = GetUserId();
 
   const addToCart = (data: Product) => {
     cart.addItem({ ...data, qty: 1 });
