@@ -25,14 +25,15 @@ const CartContent = ({ userId }: CartContentProps) => {
   }, 0);
 
   useEffect(() => {
-    if (searchParams.get("Success")) {
+    if (searchParams.get("success")) {
       toast.success("Payment completed");
+      cart.removeAll();
     }
 
     if (searchParams.get("cancelled")) {
       toast.error("Ooops something went wront try again later!");
     }
-  }, [searchParams, cart.removeAll]);
+  }, [searchParams]);
 
   const onCheckOut = async () => {
     const response = await axios.post(
