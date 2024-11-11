@@ -25,7 +25,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Contact</h2>
-            <p className="text-black text-sm">+000 0000 0000</p>
+            <p className="text-black text-sm">(+27) 64 358 9082</p>
             <p className="text-black text-sm">info@blueworld.com</p>
             <p className="text-black text-sm">
               243 Sandton Dr, Sandton

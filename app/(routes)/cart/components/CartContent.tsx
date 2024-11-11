@@ -49,6 +49,15 @@ const CartContent = ({ userId }: CartContentProps) => {
 
   return (
     <>
+      {/* Conditional Success Message */}
+      {searchParams.get("success") && (
+        <div className="w-full text-center p-4 bg-green-100 text-green-800 rounded-lg mb-4">
+          <p className="font-semibold">
+            Your order is being processed. We will send you a WhatsApp with your
+            invoice and delivery information.
+          </p>
+        </div>
+      )}
       <div className="w-full flex items-center justify-between gap-4">
         <h2 className="text-3xl font-semibold text-neutral-700">Cart Items</h2>
         <Button onClick={cart.removeAll} variant={"destructive"}>
