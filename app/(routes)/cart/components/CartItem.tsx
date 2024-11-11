@@ -52,9 +52,9 @@ const CartItem = ({ item }: CartItemProps) => {
               onClick={() => handleQty(num)}
               key={num}
               className={cn(
-                "w-8 h-8 cursor-pointer rounded-full flex items-center justify-center border border-hero",
+                "w-8 h-8 cursor-pointer rounded-full flex items-center justify-center border border-x-blue-700",
                 qty === num
-                  ? "bg-hero text-white shadow-md"
+                  ? "bg-blue-700 text-white shadow-md"
                   : "bg-transparent shadow-none"
               )}
             >

@@ -7,7 +7,6 @@ import {
   Cigarette,
   CookingPot,
   ShoppingCart,
-
   SquareActivity,
   Utensils,
 } from "lucide-react";
@@ -71,7 +70,7 @@ const Info = ({ product }: InfoProps) => {
       <div className="w-full grid grid-cols-4 my-12">
         <div className="col-span-1 space-y-8">
           <p className="text-lg font-semibold text-neutral-700">Price</p>
-          <p className="text-lg font-semibold text-neutral-700">Serves</p>
+          <p className="text-lg font-semibold text-neutral-700">Qty</p>
         </div>
         <div className="col-span-3 space-y-8">
           <p className="font-bold text-black text-xl">R{product.price}</p>
@@ -95,7 +94,7 @@ const Info = ({ product }: InfoProps) => {
       </div>
       <Button
         onClick={() => addToCart(product)}
-        className="w-full py-6 text-xl font-bold hover:bg-hero hover:text-white flex items-center justify-center gap-3"
+        className="w-full py-6 text-xl font-bold hover:bg-blue-700 hover:text-white flex items-center justify-center gap-3"
       >
         Add to cart <ShoppingCart className="w-4 h-4" />
       </Button>
